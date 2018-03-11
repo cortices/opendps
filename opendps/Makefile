@@ -14,8 +14,11 @@ SPLASH_SCREEN := 0
 WIFI := 1
 
 # Maximum current your DPS model can provide. Eg 5000mA for the DPS5005
-MAX_CURRENT := 5000
-# Please note that the UI currently does not handle settings larger that 9.99A
+ifeq ($(MODEL), DPS5005)
+	MAX_CURRENT := 5000
+else ifeq ($(MODEL), DPS5015)
+	MAX_CURRENT := 15000
+endif
 
 CFLAGS = -I. -DCONFIG_DPS_MAX_CURRENT=$(MAX_CURRENT)
 
@@ -70,3 +73,5 @@ test:
 
 doxygen:
 	@doxygen config.dox
+
+

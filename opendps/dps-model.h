@@ -50,8 +50,8 @@
  #define A_DAC_C (double)261.6666
  #define V_ADC_K (double)13.012
  #define V_ADC_C (double)-125.732
- #define V_DAC_K (double)0.072266
- #define V_DAC_C (double)4.444777
+ #define V_DAC_K (double)0.0777430       // Cortices Manual Calibration
+ #define V_DAC_C (double)4.776753        // Cortices Manual Calibration
 #elif defined(DPS5005)
  #define ADC_CHA_IOUT_GOLDEN_VALUE  (0x45)
  #define A_ADC_K (double)1.713
